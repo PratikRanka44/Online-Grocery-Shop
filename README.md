@@ -1,4 +1,4 @@
-Grocery Shop
+
 Grocery Shop is an online platform designed for seamless grocery shopping. It allows users to browse products, add items to their cart, and complete purchases efficiently. The platform also includes features for user authentication, category-based product display, and a custom admin panel for managing the store.
 
 🚀 Features
