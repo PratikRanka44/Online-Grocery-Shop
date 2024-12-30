@@ -1,0 +1,9 @@
+digraph DFD_Level_0 {
+	dpi=300 rankdir=RL size="10,6"
+	User [label=User color=lightblue fontsize=14 shape=rectangle style=filled width=1.5]
+	Website [label="Online Grocery Website" fontsize=14 shape=ellipse width=2]
+	Admin [label=Admin color=lightgreen fontsize=14 shape=rectangle style=filled width=1.5]
+	User -> Website [label="Request (Browse, Order, Register)" fontsize=12]
+	Website -> User [label="Response (Product Info, Order Confirmation)" fontsize=12]
+	Admin -> Website [label="Manage Website (Update Products, View Orders)" fontsize=12]
+}

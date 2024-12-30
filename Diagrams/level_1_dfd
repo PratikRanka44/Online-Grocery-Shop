@@ -1,0 +1,18 @@
+digraph DFD_Level_0 {
+	dpi=300 rankdir=LR size="8,5"
+	User [label=User color=lightblue shape=rectangle style=filled]
+	Admin [label=Admin color=lightgreen shape=rectangle style=filled]
+	Website [label="Online Grocery Website" shape=ellipse]
+	D1 [label="Product Database" shape=cylinder]
+	D2 [label="Order Database" shape=cylinder]
+	D3 [label="Customer Database" shape=cylinder]
+	User -> Website [label="Request (Browse, Order, Register)"]
+	Website -> User [label="Response (Product Info, Order Confirmation)"]
+	Admin -> Website [label="Manage Website (Update Products, View Orders)"]
+	Website -> D1 [label="Fetch/Update Products"]
+	Website -> D2 [label="Create/Update Orders"]
+	Website -> D3 [label="Manage Customer Info"]
+	D1 -> Website [label="Product Data"]
+	D2 -> Website [label="Order Data"]
+	D3 -> Website [label="Customer Data"]
+}

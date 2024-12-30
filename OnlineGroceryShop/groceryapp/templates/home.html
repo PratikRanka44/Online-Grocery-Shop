@@ -1,0 +1,225 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block navigation %}
+
+<html lang="en">
+  <head>
+    <title>FoodMart - Free eCommerce Grocery Store HTML Website Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+   
+
+
+      <style>
+    .carousel-item img{
+        height:500px;
+    }
+    .carousel-caption {
+        background-color: rgba(0,0,0,0.5);
+    }
+    .category-item img{                                          
+      height:60px;
+    }
+    .row-1{
+      margin-top:-70px;
+    }
+    .section-title{
+        margin-left: 670px;
+        font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+        }
+    
+.view_all{
+  margin-left: 1340px;
+  font-family: "Kalnia Glaze", serif;
+font-optical-sizing: auto;
+font-style: normal;
+font-variation-settings:
+"wdth" 125;
+font-size:18px;
+
+}
+
+    h6{
+      margin-top:20px;
+    }
+
+
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-left: -10px;
+      margin-right: -10px;
+  }
+  
+  .card-container .card {
+      flex: 0 0 calc(20% - 20px); /* 20% width minus the margin to fit 5 cards */
+      margin: 10px;
+      box-sizing: border-box;
+  }
+  
+  .card img {
+      max-width: 100%;
+      height: 250px;
+      object-fit: cover;
+  }
+  
+  .col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 20%;
+    max-width: 20%;
+
+    .carousel-color{
+      color:white;
+    }
+}
+
+  
+
+</style>
+</head>
+<body>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    {% for i in carousel %}
+        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+          <img class="d-block w-100" src="{{i.image.url}}" alt="{{i.title}}">
+          <div class="carousel-caption d-none d-md-block">
+            <span class="carousel-color"style="font-size:20px">{{i.title}}</span>
+            <p>{{i.description}}</p>
+            
+          </div>
+        </div>
+    {% endfor %}
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+<section class="py-5 overflow-hidden">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+          <h2 class="section-title">Category      
+            
+          </h2> <a href="/user-product/0/"><h6>View Categories >></h6>
+         </div>
+        </div>
+    </div>
+    <div class="row  row-1">
+      <div class="col-md-12">
+<div class="category-carousel swiper">
+          <div class="swiper-wrapper">
+            <a href="/user-product/5/" class="nav-link category-item swiper-slide">
+              <img src="{% static 'images/icon-vegetables-broccoli.png'%}" alt="Category Thumbnail">
+              <h3 class="category-title">Fruits & Veges</h3>
+            </a>
+            <a href="/user-product/12/" class="nav-link category-item swiper-slide">
+              <img src="{% static 'images/icon-bread-baguette.png'%}" alt="Category Thumbnail">
+              <h3 class="category-title">Bakery Products</h3>
+            </a>
+            <a href="/user-product/11/" class="nav-link category-item swiper-slide">
+              <img src="{% static 'images/icon-snacks-chocolates.jpg'%}" height="120px"  width="70px" alt="Category Thumbnail">
+              <h3 class="category-title">Snacks & Chocolate</h3>
+            </a>
+            <a href="/user-product/8/" class="nav-link category-item swiper-slide">
+              <img src="{% static 'images/icon-wine-glass-bottle.png'%}" alt="Category Thumbnail">
+              <h3 class="category-title">Cold Drinks & Ice Cream</h3>
+            </a>
+          
+            <a href="/user-product/7/" class="nav-link category-item swiper-slide">
+              <img src="{% static 'images/icon-home-cleaning.png'%}" height="120px"  width="70px" alt="Category Thumbnail">
+              <h3 class="category-title">Home Cleaning</h3>
+            </a>
+            <a href="/user-product/10/" class="nav-link category-item swiper-slide">
+              <img src="{% static 'images/icon-stationary.png'%}" height="120px" alt="Category Thumbnail">
+              <h3 class="category-title">Stationary</h3>
+            </a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!--  category name -->
+<div class="container-fluid row-12">
+    <div class="container-fluid">
+        {% for category, products in category_products %}
+        <h4 style="color:red;">{{ category.name }}</h4>        <a href="/user-product/0/" class="view_all">View All >></a> <!-- Display category name -->
+        <div class="row w-100 mx-auto">
+            {% for product in products %}
+            <div class="col-md-3">
+                <div class="card" align="center" style="border:1px solid lightgrey">
+                    <img class="card-img-top img-thumbnail" src="{{ product.image.url }}" style="height:250px" width="auto" alt="card-img">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ product.name }} Rs.
+                            <del>{{ product.price }}</del>
+                            {{ product.id|applydiscount }}
+                        </h6>
+                        <p class="card-text" style="font-size:14px">{{ product.description }}</p>
+                        <a href="/add-to-cart/{{ product.id }}/" class="btn btn-primary">
+                            <i class="fa fa-shopping-cart"></i> Add to cart
+                        </a>
+                        <a href="/product-detail/{{ product.id }}/" class="btn btn-warning">
+                            <i class="fa fa-info" style="font-size:22px"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr/> <!-- Separate categories visually -->
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+{% include 'footer.html' %}
+
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+</body>
+</html>
